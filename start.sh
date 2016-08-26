@@ -6,6 +6,5 @@ apt upgrade
 sudo chmod +x *.sh 
 sudo ./installApps.sh
 sudo ./installDevelopment.sh
-sudo ./installChrome.sh
 
 #sudo apt-get autoremove
