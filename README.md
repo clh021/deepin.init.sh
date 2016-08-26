@@ -1,1 +1,1 @@
-# ubuntu.init.sh
+# deepin.init.sh
