@@ -1,1 +1,2 @@
-# deepin.init.sh
+# Linux.init.sh
+Support All linux which is based on debian.
