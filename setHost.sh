@@ -18,4 +18,4 @@ sudo cp /etc/hosts $BAKFILE
 wget -c https://raw.githubusercontent.com/racaljk/hosts/master/hosts
 cat $YFILE >> hosts #后期如果发现问题则需要将 YFILE存于文件开头
 sudo cp hosts /etc/hosts
-# rm hosts
+rm -f hosts
