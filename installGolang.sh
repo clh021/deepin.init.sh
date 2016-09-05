@@ -8,3 +8,8 @@ source ~/.profile #使环境变量生效
 
 go get github.com/astaxie/beego
 go get github.com/beego/bee
+
+go get github.com/qiangxue/golang-restful-starter-kit
+go get -u github.com/Masterminds/glide
+
+# 更多go相关学习笔记，可参考[这里](https://github.com/clh021/docker.home/tree/master/study/golang)
