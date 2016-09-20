@@ -4,7 +4,7 @@ sudo apt install -y vscode #vscode
 sudo apt install -y apps.com.wechat.web #微信
 sudo apt install -y apps.com.xunlei.mini #迅雷
 # sudo apt install -y apps.com.yidianzixun #一点资讯#安卓版#140M大小，占用513M空间#体验并不很好
-sudo apt install -y virtualbox virtualbox-qt virtualbox-ext-pack #虚拟机
+echo "sudo apt install -y virtualbox virtualbox-qt virtualbox-ext-pack #虚拟机"
 sudo apt install -y workrave #定时休息软件
 sudo apt install -y backintime-common backintime-gnome #系统还原点
 #可以通过 apt-cache search apps.com 命令发现更多最新windows软件
