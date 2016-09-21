@@ -6,6 +6,7 @@ echo 'export GOPATH=~/app/gopath' >> ~/.profile #设置GO程序包环境变量�
 echo 'export GOROOT=/usr/local/go' >> ~/.profile #设置GO主体程序包根目录,bee new 安装的地方
 echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.profile #设置GO主体环境变量
 source ~/.profile #使环境变量生效
+go env
 
 installGoDevelopmentEnvironment(){
     sudo apt install -y curl git vim ctags
