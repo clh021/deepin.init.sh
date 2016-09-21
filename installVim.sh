@@ -10,5 +10,11 @@ read auto_reboot
 installGoDevelopmentEnvironment(){
     mkdir ~/.vim/bundle
     #...
+    # git clone git@github.com:farazdagi/vim-go-ide.git ~/.vim_go_runtime
+    # sh ~/.vim_go_runtime/bin/install
+    # curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    # vim -u ~/.vimrc.go
+    # alias vimgo='vim -u ~/.vimrc.go'
+    # :GoInstallBinaries
 }
 #curl -sSL https://raw.githubusercontent.com/clh021/sh/master/installVim.sh | sudo sh
