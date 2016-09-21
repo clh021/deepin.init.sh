@@ -30,4 +30,4 @@ echo $today
 
 # 更多go相关学习笔记，可参考[这里](https://github.com/clh021/docker.home/tree/master/study/golang)
 
-#curl -sSL https://raw.githubusercontent.com/clh021/sh/master/installVim.sh | sudo sh
+#curl -sSL https://raw.githubusercontent.com/clh021/sh/master/installGolang.sh | sudo sh
