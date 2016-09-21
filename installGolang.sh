@@ -1,5 +1,5 @@
 #!/bin/bash
-wget -c https://storage.googleapis.com/golang/go1.7.linux-amd64.tar.gz
+# wget -c https://storage.googleapis.com/golang/go1.7.linux-amd64.tar.gz #似乎替换了IP也无法下载，建议迅雷下载好放在当前目录
 tar -C /usr/local -xzf go1.7.linux-amd64.tar.gz #安装Golang基本程序
 mkdir ~/app/gopath -p
 echo 'export GOPATH=~/app/gopath' >> ~/.profile #设置GO程序包环境变量目录
