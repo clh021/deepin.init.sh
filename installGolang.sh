@@ -7,13 +7,12 @@ echo 'export GOROOT=/usr/local/go' >> ~/.profile #设置GO主体程序包根目�
 echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.profile #设置GO主体环境变量
 source ~/.profile #使环境变量生效
 
-go get github.com/astaxie/beego
-go get github.com/beego/bee
-# go get github.com/qiangxue/golang-restful-starter-kit
-# go get -u github.com/Masterminds/glide
-
 installGoDevelopmentEnvironment(){
-    sudo apt install -y curl go git vim ctags
+    sudo apt install -y curl git vim ctags
+    go get github.com/astaxie/beego
+    go get github.com/beego/bee
+    # go get github.com/qiangxue/golang-restful-starter-kit
+    # go get -u github.com/Masterminds/glide
     mkdir ~/.vim/bundle -p
     git clone https://github.com/farazdagi/vim-go-ide.git ~/.vim_go_runtime
     sh ~/.vim_go_runtime/bin/install
