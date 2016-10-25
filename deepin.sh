@@ -1,5 +1,5 @@
 #!/bin/bash
-# apt update
+apt update
 # apt upgrade
 PRE_URL=https://raw.githubusercontent.com/clh021/sh/master/
 # curl ${PRE_URL}test/test.sh | sh
