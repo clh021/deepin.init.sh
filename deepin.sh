@@ -10,6 +10,8 @@ curl ${PRE_URL}installFilezilla.sh | sh
 curl ${PRE_URL}installRemmina.sh | sh
 curl ${PRE_URL}installSublime-textDeepin.sh | sh
 # curl ${PRE_URL}installGolang.sh | sh
+curl ${PRE_URL}installDocker_.sh | sh
+docker pull flyinprogrammer/cloud9-with-carina mariadb php:apache registry.cn-hangzhou.aliyuncs.com/leehom/busybox
 curl ${PRE_URL}setHost.sh | sh
 curl ${PRE_URL}setBackground.sh | sh
 curl ${PRE_URL}tips.sh | sh
