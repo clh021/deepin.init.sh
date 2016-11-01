@@ -6,6 +6,6 @@ sudo tee /etc/systemd/system/docker.service.d/mirror.conf <<-'EOF'
 [Service] 
 ExecStart= 
 ExecStart=/usr/bin/docker daemon -H fd:// --registry-mirror=https://eko4ves3.mirror.aliyuncs.com 
-EOF 
+EOF
 sudo systemctl daemon-reload 
 sudo systemctl restart docker
