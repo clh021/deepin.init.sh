@@ -1,6 +1,6 @@
 #!/bin/bash
 apt update
-# apt upgrade
+#apt upgrade #升级有可能需要重启
 PRE_URL=https://raw.githubusercontent.com/clh021/sh/master/
 # curl ${PRE_URL}test/test.sh | sh
 curl ${PRE_URL}removeAppsDeepin.sh | sh
