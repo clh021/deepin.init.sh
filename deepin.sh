@@ -12,7 +12,6 @@ curl ${PRE_URL}installSublime-textDeepin.sh | sh
 curl ${PRE_URL}setHost.sh | sh
 # curl ${PRE_URL}installGolang.sh | sh
 curl ${PRE_URL}installDocker_.sh | sh
-docker pull flyinprogrammer/cloud9-with-carina mariadb php:apache registry.cn-hangzhou.aliyuncs.com/leehom/busybox
 # curl ${PRE_URL}setBackground.sh | sh #暂时没有作用，请手动修改
 curl ${PRE_URL}tips.sh | sh
 #sudo apt-get autoremove #deepin中可能引发一些问题
