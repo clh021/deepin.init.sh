@@ -39,7 +39,7 @@
 myname=${0##*/}
 
 HOSTS="/etc/hosts"
-BACKUP_FILE="/etc/hosts.bak"
+BACKUP_FILE="/etc/hosts.$(date +%Y%m%d%H%M%S).bak"
 REMOTE_FILE="/tmp/hosts.rmt"
 
 MAIN="https://raw.githubusercontent.com/racaljk/hosts/master/hosts"
