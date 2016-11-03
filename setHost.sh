@@ -135,7 +135,9 @@ update_hosts()
 		sed -n "$RANGE"p "$HOSTS" > "$swp"
 	else
 		# Range mode off, auto set marker if no marker in the local hosts file.
-		if [ ! cat /etc/hosts | grep "$BEGIN_MARK" ]; then
+		if cat /etc/hosts | grep "$BEGIN_MARK"; then
+			echo 'Find MARK and handle the marker range only'
+		else
 			echo 'Not find MARK and set marker'
 			echo $BEGIN_MARK >> /etc/hosts
 			echo $END_MARK >> /etc/hosts
