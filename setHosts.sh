@@ -139,8 +139,8 @@ update_hosts()
 			echo 'Find MARK and handle the marker range only'
 		else
 			echo 'Not find MARK and set marker'
-			echo $BEGIN_MARK >> /etc/hosts
-			echo $END_MARK >> /etc/hosts
+			sudo echo $BEGIN_MARK >> /etc/hosts
+			sudo echo $END_MARK >> /etc/hosts
 		fi
 		# Range mode off, handle marker in the local hosts file.
 		if grep -q "$BEGIN_MARK" "$HOSTS"; then
