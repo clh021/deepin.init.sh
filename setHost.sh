@@ -19,4 +19,4 @@ echoredcn(){
 #cat $YFILE >> hosts #后期如果发现问题则需要将 YFILE存于文件开头
 #sudo cp hosts /etc/hosts
 
-echoredcn "Maybe you want to do this command\necho \"127.0.1.1   lc\" >> /etc/hosts"
+echo "Maybe you want to do this command\necho \"127.0.1.1   lc\" >> /etc/hosts"
