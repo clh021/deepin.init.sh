@@ -12,10 +12,8 @@ if [ ! -z "$RANGE" ]; then
   #sed -n "$RANGE"p "$HOSTS" > "$swp"
 else
   # Range mode off, auto set marker if no marker in the local hosts file.
-  if cat /etc/hosts | grep 'lc'; then
-    echo 'find lc'
-  else
-    echo 'not find lc'
+  if [ ! cat /etc/hosts | grep 'lc' ]; then
+    echo 'not find lc and set marker'
   fi
   # Range mode off, handle marker in the local hosts file.
   #if grep -q "$BEGIN_MARK" "$HOSTS"; then
