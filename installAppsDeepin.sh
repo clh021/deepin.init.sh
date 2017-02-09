@@ -7,7 +7,7 @@ sudo apt install -y apps.com.xunlei.mini #迅雷
 # echo "sudo apt install -y virtualbox virtualbox-qt virtualbox-ext-pack #虚拟机"
 sudo apt install -y workrave #定时休息软件
 sudo apt install -y redshift #调节屏幕亮度和色温来保护眼睛
-sudo apt install -y backintime-common backintime-gnome #系统还原点
+#sudo apt install -y backintime-common backintime-gnome #系统还原点#deepin中无法使用
 #可以通过 apt-cache search apps.com 命令发现更多最新windows软件
 # sudo apt install -y apps.com.baidu.music.pad # 百度音乐安卓pad版,可下载音乐
 # sudo apt install -y apps.com.kugou.music #酷狗音乐网页版,用来听音乐,收藏音乐很好#不推荐，有更好的替代方案
