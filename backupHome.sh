@@ -18,11 +18,13 @@ echo '.bashrc' >> backupHome.list
 echo '.vimrc' >> backupHome.list
 #ssh配置
 echo '.ssh' >> backupHome.list
-#npm软件及包
+#绿色软件包
+#可以自己灵活控制多版本并快速移植
+echo '.programs' >> backupHome.list
+#npm软件包
 #可以自己把握软件版本，同时可快速移植
 echo '.npm' >> backupHome.list
-#php软件及包
-#可以自己灵活控制多版本并快速移植
+#php软件包
 echo '.composer' >> backupHome.list
 tar -cvpznf homebak.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
 rm backupHome.list
