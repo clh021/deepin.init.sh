@@ -9,8 +9,9 @@ curl ${PRE_URL}installDevelopment_.sh | sh
 curl ${PRE_URL}installFilezilla.sh | sh
 curl ${PRE_URL}installRemmina.sh | sh
 curl ${PRE_URL}installSublime-textDeepin.sh | sh
-# curl ${PRE_URL}setHosts.sh | sh
-curl https://raw.githubusercontent.com/racaljk/hosts/master/tools/lhosts | sh
+curl ${PRE_URL}setHosts.sh | sh
+curl ${PRE_URL}setAliDns.sh | sh
+# curl https://raw.githubusercontent.com/racaljk/hosts/master/tools/lhosts | sh
 # curl ${PRE_URL}installGolang.sh | sh
 curl ${PRE_URL}installDocker_.sh | sh
 # curl ${PRE_URL}setBackground.sh | sh #暂时没有作用，请手动修改
