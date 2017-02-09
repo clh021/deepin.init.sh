@@ -2,8 +2,10 @@
 #使用方法：在自己Home目录下执行以下命令即可备份关键信息
 #curl https://raw.githubusercontent.com/clh021/sh/master/backupHome.sh | sh
 #需要跟踪备份的内容
+#壁纸
+echo 'Pictures/Wallpapers' > backupHome.list
 #浏览器的内容，扩展，收藏，历史记录
-echo '.config/google-chrome' > backupHome.list
+echo '.config/google-chrome' >> backupHome.list
 #候选字数从5修改为9
 echo '.config/SogouPY/sogouEnv.ini' >> backupHome.list
 echo '.config/fcitx/config' >> backupHome.list
