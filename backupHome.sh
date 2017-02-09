@@ -24,4 +24,4 @@ echo '.npm' >> backupHome.list
 #可以自己灵活控制多版本并快速移植
 echo '.composer' >> backupHome.list
 tar -cvpznf homebak.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
-rm backupHome.list
+#rm backupHome.list
