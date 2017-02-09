@@ -3,7 +3,7 @@
 #curl https://raw.githubusercontent.com/clh021/sh/master/backupHome.sh | sh
 #需要跟踪备份的内容
 #浏览器的内容，扩展，收藏，历史记录
-echo '.config/google-chrome' >> backupHome.list
+echo '.config/google-chrome' > backupHome.list
 #候选字数从5修改为9
 echo '.config/SogouPY/sogouEnv.ini' >> backupHome.list
 echo '.config/fcitx/config' >> backupHome.list
