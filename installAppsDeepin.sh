@@ -4,7 +4,7 @@ sudo apt install -y vscode #vscode
 sudo apt install -y apps.com.wechat.web #微信
 sudo apt install -y apps.com.xunlei.mini #迅雷
 # sudo apt install -y apps.com.yidianzixun #一点资讯#安卓版#140M大小，占用513M空间#体验并不很好
-# echo "sudo apt install -y virtualbox virtualbox-qt virtualbox-ext-pack #虚拟机"
+sudo apt install -y virtualbox virtualbox-qt virtualbox-ext-pack #虚拟机
 sudo apt install -y workrave #定时休息软件
 sudo apt install -y redshift #调节屏幕亮度和色温来保护眼睛
 #sudo apt install -y backintime-common backintime-gnome #系统还原点#deepin中无法使用
