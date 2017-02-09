@@ -1,5 +1,6 @@
 #!/bin/bash
-#curl https://raw.githubusercontent.com/clh021/sh/master/backupHome.sh | sudo sh
+#使用方法：在自己Home目录下执行以下命令即可备份关键信息
+#curl https://raw.githubusercontent.com/clh021/sh/master/backupHome.sh | sh
 #需要跟踪备份的内容
 #浏览器的内容，扩展，收藏，历史记录
 echo '.config/google-chrome' >> backupHome.list
@@ -24,4 +25,4 @@ echo '.npm' >> backupHome.list
 #可以自己灵活控制多版本并快速移植
 echo '.composer' >> backupHome.list
 tar -cvpznf homebak.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
-#rm backupHome.list
+rm backupHome.list
