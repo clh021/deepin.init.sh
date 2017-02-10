@@ -23,7 +23,7 @@ echo '.ssh' >> backupHome.list
 echo '.composer' >> backupHome.list
 
 #可以自己灵活控制多版本并快速移植
-echo '.programs' > backupHome.list
+echo '.programs' >> backupHome.list
 #npm软件包
 #可以自己把握软件版本，同时可快速移植
 echo '.npm' >> backupHome.list
