@@ -29,7 +29,7 @@ echo '.programs' > backupHome.list
 echo '.npm' >> backupHome.list
 echo '.profile' >> backupHome.list
 #浏览器的内容，扩展，收藏，历史记录
-echo '.config/google-chrome' > backupHome.list
+echo '.config/google-chrome' >> backupHome.list
 tar -cvpznf homebak.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
 
 
