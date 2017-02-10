@@ -19,25 +19,31 @@ echo '.vimrc' >> backupHome.list
 #ssh配置
 echo '.ssh' >> backupHome.list
 
-#php软件包
-echo '.composer' >> backupHome.list
+echo '.profile' >> backupHome.list
+tar -cvpznf homebak.min.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
+
 
 #可以自己灵活控制多版本并快速移植
 echo '.programs' >> backupHome.list
+#php软件包
+echo '.composer' >> backupHome.list
 #npm软件包
 #可以自己把握软件版本，同时可快速移植
 echo '.npm' >> backupHome.list
-echo '.profile' >> backupHome.list
+#golang软件包
+echo '.programs/go1.7.4.linux-amd64' >> backupHome.list
+echo '.programs/liteidex30.3.linux32-qt4' >> backupHome.list
+echo 'go' >> backupHome.list
+#vscode软件包
+echo '.config/Code' >> backupHome.list
 #浏览器的内容，扩展，收藏，历史记录
 echo '.config/google-chrome' >> backupHome.list
 tar -cvpznf homebak.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
 
 
-
 #浏览器的内容，扩展，收藏，历史记录
 echo '.config/google-chrome' > backupHome.list
 tar -cvpznf homebak.chrome.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
-
 
 
 #可以自己灵活控制多版本并快速移植
@@ -48,5 +54,14 @@ echo '.npm' >> backupHome.list
 echo '.profile' >> backupHome.list
 tar -cvpznf homebak.npm.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
 
+
+echo '.programs/go1.7.4.linux-amd64' > backupHome.list
+echo '.programs/liteidex30.3.linux32-qt4' >> backupHome.list
+echo 'go' >> backupHome.list
+echo '.profile' >> backupHome.list
+tar -cvpznf homebak.go.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
+
+echo '.config/Code' > backupHome.list
+tar -cvpznf homebak.vscode.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
 
 rm backupHome.list
