@@ -1,0 +1,10 @@
+Pictures/Wallpapers
+.config/SogouPY/sogouEnv.ini
+.config/fcitx/config
+.config/autostart
+.config/deepin/dde-launcher-app-autostart.conf
+.gitconfig
+.bashrc
+.vimrc
+.ssh
+.profile

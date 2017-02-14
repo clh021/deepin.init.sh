@@ -1,14 +1,11 @@
 #!/bin/bash
 apt update
 #apt upgrade #升级有可能需要重启
-PRE_URL=https://raw.githubusercontent.com/clh021/sh/master/
+PRE_URL=https://raw.githubusercontent.com/clh021/sh/master/init/
 # curl ${PRE_URL}test/test.sh | sh
 curl ${PRE_URL}removeAppsDeepin.sh | sh
 curl ${PRE_URL}installAppsDeepin.sh | sh
-curl ${PRE_URL}installDevelopment_.sh | sh
-curl ${PRE_URL}installFilezilla.sh | sh
-curl ${PRE_URL}installRemmina.sh | sh
-curl ${PRE_URL}installSublime-textDeepin.sh | sh
+# curl ${PRE_URL}installDevelopment_.sh | sh #采用新的备份方案，故在install中安装，配置使用备份方案，更简洁
 curl ${PRE_URL}setHosts.sh | sh
 curl ${PRE_URL}setAliDns.sh | sh
 # curl https://raw.githubusercontent.com/racaljk/hosts/master/tools/lhosts | sh

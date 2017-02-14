@@ -1,0 +1,17 @@
+sh
+Pictures/Wallpapers
+.config/SogouPY/sogouEnv.ini
+.config/fcitx/config
+.config/autostart
+.config/deepin/dde-launcher-app-autostart.conf
+.gitconfig
+.bashrc
+.vimrc
+.ssh
+.profile
+.config/google-chrome
+.programs/go1.7.4.linux-amd64
+go
+.programs/node-v6.9.5-linux-x64
+.npm
+.config/Code

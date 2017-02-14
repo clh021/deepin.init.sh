@@ -12,7 +12,10 @@ Maybe you should install `curl` By `sudo apt install -y curl`
 ```
 curl https://raw.githubusercontent.com/clh021/sh/master/backupHome.sh | sh
 ```
-
+# Backup chrome
+```
+tar -cvpznf homebak.chrome.`date +%Y%m%d%H%M%S`.tar.gz .config/google-chrome
+```
 # Host tool
 ```
 curl -sSL https://raw.githubusercontent.com/racaljk/hosts/master/tools/lhosts | sudo sh
