@@ -4,30 +4,43 @@
 # ==================================================
 # ready
 _today=`date +%Y%m%d%H%M%S`
-MENUS=(init_deepin_system back_deepin_system back_deepin_chrome install_something);
+MENUS=(init_deepin_system back_all back_deepin_system back_deepin_chrome back_npm install_something);
 INSTALL_MENUS=(alidebian aliubuntu echoclrs)
 DOCKER_MENUS=()
+# PRE_URL=https://raw.githubusercontent.com/clh021/sh/master/init/
+PRE_URL=~/workspace/sh/ #需要提前下载
 # ==================================================
 
 init_deepin_system(){
     apt update
-    # PRE_URL=https://raw.githubusercontent.com/clh021/sh/master/init/
-    PRE_URL=~/sh/init/ #需要提前下载
-    bash ${PRE_URL}removeAppsDeepin.sh
-    bash ${PRE_URL}installAppsDeepin.sh
-    bash ${PRE_URL}setHosts.sh
-    bash ${PRE_URL}setAliDns.sh
-    bash ${PRE_URL}installDocker_.sh
+    bash ${PRE_URL}init/removeAppsDeepin.sh
+    bash ${PRE_URL}init/installAppsDeepin.sh
+    bash ${PRE_URL}init/setHosts.sh
+    bash ${PRE_URL}init/setAliDns.sh
+    bash ${PRE_URL}init/installDocker_.sh
     # curl ${PRE_URL}setBackground.sh | sh #暂时没有作用，请手动修改
-    bash ${PRE_URL}tips.sh | sh
+    bash ${PRE_URL}init/tips.sh | sh
 }
 back_deepin_system(){
     cd;
-    tar -cvpznf homebak.`date +%Y%m%d%H%M%S`.tar.gz -T ~/sh/back/home
+    tar -cvpznf homebak.${_today}.tar.gz -T ${PRE_URL}back/home
 }
 back_deepin_chrome(){
     cd;
-    tar -cvpznf homebak.chrome.`date +%Y%m%d%H%M%S`.tar.gz -T ~/sh/back/chrome
+    tar -cvpznf homebak.chrome.${_today}.tar.gz -T ${PRE_URL}back/chrome
+}
+back_workspace(){
+    tar -cvpznf homebak.workspace.${_today}.tar.gz -T ~/workspace
+}
+back_all(){
+    back_deepin_system();
+    back_deepin_chrome();
+    back_npm();
+    back_workspace();
+}
+back_npm(){
+    cd;
+    tar -cvpznf homebak.npm.${_today}.tar.gz -T ${PRE_URL}back/npm
 }
 echoclr(){
 	case $1 in

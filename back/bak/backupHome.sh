@@ -39,6 +39,7 @@ echo '.config/Code' >> backupHome.list
 echo '.vscode' >> backupHome.list
 #浏览器的内容，扩展，收藏，历史记录
 echo '.config/google-chrome' >> backupHome.list
+echo '.cache/google-chrome' >> backupHome.list #密码
 tar -cvpznf homebak.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
 
 
