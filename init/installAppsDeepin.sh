@@ -21,3 +21,5 @@ sudo apt install -y redshift #调节屏幕亮度和色温来保护眼睛
 # sudo apt install -y bcloud #百度网盘第三方python版本 #并不能使用
 sudo apt install -y peek #录制gif的好用工具，深度将会推出类似工具
 sudo apt install -y scrt-sfx # scrt-sfx - SecureCRT and SecureFX
+# 还不错的教学视频录制软件
+# vokoscreen(强力推荐),kazam(推荐),recordMyDesktop,SimpleScreenRecorder(推荐)
