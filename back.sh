@@ -1,74 +1,153 @@
 #!/bin/bash
 # leehom Chen clh021@gmail.com
-# sed -i 's/\r//' lianghongdev.sh
 # ==================================================
-# ready
 _today=`date +%Y%m%d%H%M%S`
-MENUS=(install_something docker_run_lamp docker_rm_lamp);
-#!/bin/bash
-#使用方法：在自己Home目录下执行以下命令即可备份关键信息
-#curl https://raw.githubusercontent.com/clh021/sh/master/back.sh | sh
+
 #需要跟踪备份的内容
+
 #壁纸
-echo 'Pictures/Wallpapers' > backupHome.list
 #候选字数从5修改为9
-echo '.config/SogouPY/sogouEnv.ini' >> backupHome.list
-echo '.config/fcitx/config' >> backupHome.list
 #开机启动配置备份
-echo '.config/autostart' >> backupHome.list
-echo '.config/deepin/dde-launcher-app-autostart.conf' >> backupHome.list
 #git配置
-echo '.gitconfig' >> backupHome.list
 #bash配置
-echo '.bashrc' >> backupHome.list
 #vim配置
-echo '.vimrc' >> backupHome.list
 #ssh配置
-echo '.ssh' >> backupHome.list
+min='
+	Pictures/Wallpapers/_bg.jpg
+	.config/SogouPY/sogouEnv.ini
+	.config/fcitx/config
+	.config/autostart
+	.config/deepin/dde-launcher-app-autostart.conf
+	.gitconfig
+	.bashrc
+	.vimrc
+	.ssh
+	.profile
+	'
+chrome='.config/google-chrome';
+golang='
+	.programs/go1.7.4.linux-amd64
+	go
+	.profile
+	'
+npm='
+	.programs/node-v6.9.5-linux-x64
+	.npm
+	.profile
+	'
+vscode='
+	.config/Code
+	'
+workspace='
+	workspace
+	'
+back_home(){
+	cd;
+	tar -cvpznf ~/homebak.${_today}.tar.gz ${chrome}${golang}${min}${npm}${vscode}${workspace};
+	cd -;
+	echo '您的文档内容已打包到~/homebak.'${1}'.'${_today}'.tar.gz'
+	echo '-----------------------------';
+	ls -lah ~ | grep .tar.gz | grep homebak;
+}
+MENUS=(back_partOfAll back_home back_chrome back_golang back_npm back_workspace);
 
-echo '.profile' >> backupHome.list
-tar -cvpznf homebak.min.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
+backing(){
+	cd;
+	eval bakList=\${$1}
+	tar -cvpznf ~/homebak.${1}.${_today}.tar.gz ${bakList};
+	cd -;
+	echo '您的'${1}'文档内容已打包到~/homebak.'${1}'.'${_today}'.tar.gz'
+	echo '-----------------------------';
+	ls -lah ~ | grep .tar.gz | grep homebak;
+}
+back_chrome(){
+	backing chrome
+}
+back_golang(){
+	backing golang
+}
+back_npm(){
+	backing npm
+}
+back_workspace(){
+	backing workspace
+}
+back_partOfAll(){
+	back_chrome
+	back_golang
+	back_npm
+	back_workspace
+	back_home
+}
+echoclr(){
+	case $1 in
+	'red')
+		echo -e "\033[31m$2\033[0m"
+	;;
+	'blue')
+		echo -e "\e[1;34m$2\e[0m"
+	;;
+	'green')
+		echo -e "\e[1;32m$2\e[0m"
+	;;
+	*)
+		echo "$2"
+		esac
+}
+show_menu(){
+	echo -e "============[ `date +%F_%T` ]=============="
+	MENUS_CNT=${#MENUS[@]}
+	for ((I=0; I<MENUS_CNT; ++I))
+    do
+        echo -e "$I.${MENUS[I]}\t"
+    done
+    echo -e "Please select[num]:";
+    read menu
+    allow="^[0-9]+$";
+    if test "$menu" = "" ; then
+        exit 0;
+    elif [[ "$menu" =~ $allow ]]; then
+        if test $menu -lt $MENUS_CNT ; then
+            eval ${MENUS[$menu]};
+        else
+            echoclr red 'Invalid selection';
+        fi
+    else
+        echoclr red 'Please enter a number';
+    fi
+    show_menu;
+    #if [ "$1" -eq "$1" ] 2>/dev/null
+    #then
+    #    echo "$1 is an integer !!"
+    #else
+    #    echo "ERROR: first paramter must be an integer."
+}
+show_menu;
 
-
-#可以自己灵活控制多版本并快速移植
-echo '.programs' >> backupHome.list
-#php软件包
-echo '.composer' >> backupHome.list
-#npm软件包
-#可以自己把握软件版本，同时可快速移植
-echo '.npm' >> backupHome.list
-#golang软件包
-echo '.programs/go1.7.4.linux-amd64' >> backupHome.list
-echo '.programs/liteidex30.3.linux32-qt4' >> backupHome.list
-echo 'go' >> backupHome.list
-#vscode软件包
-echo '.config/Code' >> backupHome.list
-#浏览器的内容，扩展，收藏，历史记录
-echo '.config/google-chrome' >> backupHome.list
-tar -cvpznf homebak.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
-
-
-#浏览器的内容，扩展，收藏，历史记录
-echo '.config/google-chrome' > backupHome.list
-tar -cvpznf homebak.chrome.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
-
-
-#可以自己灵活控制多版本并快速移植
-echo '.programs/node-v6.9.5-linux-x64' > backupHome.list
-#npm软件包
-#可以自己把握软件版本，同时可快速移植
-echo '.npm' >> backupHome.list
-echo '.profile' >> backupHome.list
-tar -cvpznf homebak.npm.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
-
-
-echo '.programs/go1.7.4.linux-amd64' > backupHome.list
-echo '.programs/liteidex30.3.linux32-qt4' >> backupHome.list
-echo 'go' >> backupHome.list
-echo '.profile' >> backupHome.list
-tar -cvpznf homebak.go.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
-
-echo '.config/Code' > backupHome.list
-tar -cvpznf homebak.vscode.`date +%Y%m%d%H%M%S`.tar.gz -T backupHome.list
-
-rm backupHome.list
+# 历史编写函数，留自日后或可用，或改进，或启发，便是极好的
+# generateBacklistByModuleName(){
+# 	eval bak_module=\${$1}
+# 	array=($bak_module)
+# 	length=${#array[@]}
+# 	for ((i=0; i<$length; i++))
+# 	do
+# 	    echo ${array[$i]} # >> /tmp/tmp_bak_list
+# 	done
+#     # cd;
+#     # tar -cvpznf ~/homebak.min.${_today}.tar.gz -T ${PRE_URL}back/tmp_bak_list
+# }
+# backingByList(){
+# 	# echo $1
+# 	# eval bak_module=\${1}
+# 	bak_module=${1}
+# 	array=($bak_module)
+# 	length=${#array[@]}
+# 	for ((i=0; i<$length; i++))
+# 	do
+# 	    echo ${array[$i]} # >> /tmp/tmp_bak_list
+# 	done
+#     # cd;
+#     # tar -cvpznf ~/homebak.min.${_today}.tar.gz -T ${PRE_URL}back/tmp_bak_list
+# }
+# # generateListByModuleName min
+# # backingByModuleName $min$npm
