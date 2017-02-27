@@ -22,18 +22,15 @@ min='
 	.bashrc
 	.vimrc
 	.ssh
-	.profile
 	'
 chrome='.config/google-chrome';
 golang='
 	.programs/go1.7.4.linux-amd64
 	go
-	.profile
 	'
 npm='
 	.programs/node-v6.9.5-linux-x64
 	.npm
-	.profile
 	'
 vscode='
 	.config/Code
@@ -41,9 +38,12 @@ vscode='
 workspace='
 	workspace
 	'
+envfiles='
+	.profile
+	'
 back_home(){
 	cd;
-	tar -cvpznf ~/homebak.${_today}.tar.gz ${chrome}${golang}${min}${npm}${vscode}${workspace};
+	tar -cvpznf ~/homebak.${_today}.tar.gz ${chrome}${golang}${min}${npm}${vscode}${workspace}${envfiles};
 	cd -;
 	echo '您的文档内容已打包到~/homebak.'${1}'.'${_today}'.tar.gz'
 	echo '-----------------------------';
@@ -54,7 +54,7 @@ MENUS=(back_partOfAll back_home back_chrome back_golang back_npm back_workspace)
 backing(){
 	cd;
 	eval bakList=\${$1}
-	tar -cvpznf ~/homebak.${1}.${_today}.tar.gz ${bakList};
+	tar -cvpznf ~/homebak.${1}.${_today}.tar.gz ${bakList}${envfiles};
 	cd -;
 	echo '您的'${1}'文档内容已打包到~/homebak.'${1}'.'${_today}'.tar.gz'
 	echo '-----------------------------';
