@@ -12,11 +12,10 @@ apt install docker.io sudo
 usermod -aG root www-data && usermod -aG docker www-data
 mkdir /var/www && chown www-data:www-data /var/www
 echo 'www-data ALL=(ALL:ALL) ALL' >> /etc/sudoers
-apt install libapache2-mod-php5 apache2-doc apache2-doc php-pear docker.io
+apt install libapache2-mod-php5 apache2-doc apache2-doc php-pear docker.io firefox-esr
+wget -c "http://pinyin.sogou.com/linux/download.php?f=linux&bit=64" -O sogou.deb && sudo gdebi -n sogou.deb
 # ================================================
-echo '===============> install firefox'
-echo -e "\ndeb http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt all main" | sudo tee -a /etc/apt/sources.list > /dev/null
-echo 'passwd www-data'
+echo '===============> set passwd www-data'
 passwd www-data
 
 # sudo apt-get install -y awesome awesome-extra xscreensaver gnome-settings-daemon
