@@ -24,3 +24,4 @@ curl -sSL https://raw.githubusercontent.com/racaljk/hosts/master/tools/lhosts | 
 ```
 # Notice
 You probably need to modify the "_" at the end of the file.
+
