@@ -56,13 +56,13 @@ systemctl enable docker
 
 # SWay
 pacman -S sway swayidle swaylock swaybg waybar brightnessctl
-pacman -S swayshot
+pacman -S gdm qt5-wayland # clutter glfw-wayland glew-wayland
+#pacman -S swayshot # on aur
 ###SWAYSHOT_SCREENSHOTS="/home/shino/Screenshots"
 ###SWAYSHOT_DATEFMT="%F-%H-%M-%S"
 
 # sudo account
 pacman -S sudo
-useradd -m -g wheel shino
 passwd arch
 #visudo /etc/sudoers
 # root password
